@@ -1,0 +1,46 @@
+# icris_ocr
+
+**icris_ocr** is a Python automation tool for extracting information from documents purchased from the Hong Kong government's Integrated Companies Registry Information System. It provides high-level abstractions in the form of classes to make extraction of data from multiple documents convenient.
+
+It provides packages for each part of the OCR process--from PDF conversion and document classification to edge detection and data cleaning. Classes representing documens have been defines in the `document_layouts` module. The subpackage `document_processing` is composed of modules aimed at preparing documents, processing them, and cleaning the data extracted; these utilities are provided by the `doc_utils`, `ocr_tools`, and `string_processing` modules respectively.
+
+Currently, it provides utilities for annual return documents. Other document layouts can be defined easily with the optimized functions defined in `document_layouts.ocr_tools`.
+
+## Installation
+
+The package can be installed by following the instructions defined [here](https://cets.seas.upenn.edu/answers/install-python-module.html).
+
+## Usage
+
+Documents can be converted and categorized with the `convert_and_categorize` function in the `document_processing.document_preparation` module. The following commands convert unique PDF files in the target directory to a directory of images of each page of the file. Then, it categorizes those directories based on the title of the document on the first page. This results in another directory being created at the level of the target directory and contains categorical directories for different document types.
+
+```Python
+>>> from icris_ocr.document_processing import document_preparation
+>>>
+>>> document_directory = 'path/to/directory'
+>>> document_preparation.convert_and_categorize(document_directory)
+```
+
+Once categorized, data can be collectively extracted from categorical directories using the `process_dir` function. The function returns a Pandas `DataFrame` object containing information about every document contained in the categorical directory and can be used for further analysis.
+
+```Python
+>>> from icris_ocr import *
+>>>
+>>> directory = 'path/to/directory'
+>>> df = process_dir(directory, doc_type='Annual Return', parallel=True)
+>>> df.to_excel('OCR Results.xlsx') # Write to Excel file
+```
+
+The same result can be achieved from the command line.
+
+```Bash
+$ python -m icris_ocr path/to/directory -t Annual\ Return -p
+```
+
+## Notes
+
+Despite the autor's optimization efforts, the computational nature of the project makes the process very time consuming. The project can be implemented in a lower language such as C in the future for improved performance.
+
+## References
+
+This project makes heavy usage of the algorithms shared by Doctor Adrian Rosebrock on his [website](https://www.pyimagesearch.com).
