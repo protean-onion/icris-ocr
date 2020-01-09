@@ -41,10 +41,10 @@ $ python -m icris_ocr path/to/directory -t Annual\ Return -p
 
 Despite the autor's optimization efforts, the computational nature of the project makes the process very time consuming. The project can be implemented in a lower language such as C in the future for improved performance.
 
-## 
-
-This project has been distributed under the [MIT](https://github.com/adityaverma415/icris_ocr/edit/master/LICENSE.txt) license.
-
 ## References
 
-This project makes heavy usage of the algorithms shared by Doctor Adrian Rosebrock on his [website](https://www.pyimagesearch.com).
+This project makes liberal usage of the algorithms shared by Doctor Adrian Rosebrock on his [website](https://www.pyimagesearch.com).
+
+## License
+
+This project has been distributed under the [MIT](https://github.com/adityaverma415/icris_ocr/edit/master/LICENSE.txt) license.
