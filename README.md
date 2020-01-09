@@ -8,7 +8,9 @@ Currently, it provides utilities for annual return documents. Other document lay
 
 ## Installation
 
-The package can be installed by following the instructions defined [here](https://cets.seas.upenn.edu/answers/install-python-module.html).
+The package relies on Google's Tesseract engine and its Chinese character recognition data set. See installation instructions for the Tesseract engine [here](https://www.pyimagesearch.com/2017/07/03/installing-tesseract-for-ocr/). Then, download the Chinese character recognition data set [here](https://github.com/tesseract-ocr/tessdata) and add it to your `tessdata` directory, which can be found in the directory for the base Tesseract engine.
+
+The package itself, along with its dependencies, can be installed by following the instructions listed [here](https://cets.seas.upenn.edu/answers/install-python-module.html).
 
 ## Usage
 
@@ -16,7 +18,6 @@ Documents can be converted and categorized with the `convert_and_categorize` fun
 
 ```Python
 >>> from icris_ocr.document_processing import document_preparation
->>>
 >>> document_directory = 'path/to/directory'
 >>> document_preparation.convert_and_categorize(document_directory)
 ```
@@ -25,7 +26,6 @@ Once categorized, data can be collectively extracted from categorical directorie
 
 ```Python
 >>> from icris_ocr import *
->>>
 >>> directory = 'path/to/directory'
 >>> df = process_dir(directory, doc_type='Annual Return', parallel=True)
 >>> df.to_excel('OCR Results.xlsx') # Write to Excel file
