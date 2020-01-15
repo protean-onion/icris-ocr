@@ -47,4 +47,4 @@ This project makes liberal usage of the algorithms shared by Doctor Adrian Roseb
 
 ## License
 
-This project has been distributed under the [MIT](https://github.com/adityaverma415/icris_ocr/edit/master/LICENSE.txt) license.
+This project has been distributed under the [MIT](https://github.com/adityaverma415/icris_ocr/blob/master/LICENSE) license.
