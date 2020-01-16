@@ -1,6 +1,6 @@
-# icris_ocr
+# icris-ocr
 
-**icris_ocr** is a Python automation tool for extracting information from documents purchased from the Hong Kong government's Integrated Companies Registry Information System. It provides high-level abstractions in the form of classes to make extraction of data from multiple documents convenient.
+**icris-ocr** is a Python automation tool for extracting information from documents purchased from the Hong Kong government's Integrated Companies Registry Information System. It provides high-level abstractions in the form of classes to make extraction of data from multiple documents convenient.
 
 It provides utilities for each part of the OCR process--from PDF conversion and document classification to edge detection and data cleaning. Classes representing documens have been defined in the `document_layouts` module. The subpackage `document_processing` is composed of modules aimed at preparing documents, processing them, and cleaning the data extracted; these utilities are provided by the `doc_utils`, `ocr_tools`, and `string_processing` modules respectively.
 
