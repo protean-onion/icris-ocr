@@ -4,7 +4,7 @@
 
 It provides utilities for each part of the OCR process--from PDF conversion and document classification to edge detection and data cleaning. Classes representing documens have been defined in the `document_layouts` module. The subpackage `document_processing` is composed of modules aimed at preparing documents, processing them, and cleaning the data extracted; these utilities are provided by the `doc_utils`, `ocr_tools`, and `string_processing` modules respectively.
 
-Currently, it provides utilities for annual return documents. Other document layouts can be defined with the optimized functions defined in `document_layouts.ocr_tools`.
+Currently, it provides utilities for annual return documents. Support for other documents can be added with the optimized functions defined in `document_layouts.ocr_tools`.
 
 ## Installation
 
